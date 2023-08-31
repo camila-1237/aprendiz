@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Lista de Aprendices</title>
+</head>
+<body>
+    <h1>Lista de Aprendices</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Número de Documento</th>
+                <th>Tipo de Documento</th>
+                <th>Número de Ficha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aprendiz in aprendices %}
+                <tr>
+                    <td>{{ aprendiz.id }}</td>
+                    <td>{{ aprendiz.nombre }}</td>
+                    <td>{{ aprendiz.apellido }}</td>
+                    <td>{{ aprendiz.fecha_nacimiento }}</td>
+                    <td>{{ aprendiz.numero_documento }}</td>
+                    <td>{{ aprendiz.tipo_documento }}</td>
+                    <td>{{ aprendiz.numero_ficha }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'crear_aprendiz' %}">Crear Nuevo Aprendiz</a>
+</body>
+</html>
